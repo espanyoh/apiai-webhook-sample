@@ -26,7 +26,14 @@ restService.post('/hook', function (req, res) {
                 }
 
                 if (requestBody.result.action) {
-                    speech += 'action: ' + requestBody.result.action;
+                    speech += 'action-: ' + requestBody.result.action;
+                }
+
+                if (requestBody.result.parameters) {
+                    speech += 'parameters: ' + requestBody.result.parameters;
+                    if(requestBody.result.parameters.Platform){
+                        speech += 'Platform : ' + requestBody.result.parameters.Platform;
+                    }
                 }
             }
         }
