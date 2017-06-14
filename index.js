@@ -29,7 +29,7 @@ restService.post('/hook', function (req, res) {
                     if (requestBody.result.parameters) {
                         if (requestBody.result.parameters.Platform) {
                             speech += 'Your ask for platform ' + requestBody.result.parameters.Platform;
-                            speech += '\n Here is some information about it : ' + platforms[requestBody.result.parameters.Platform];
+                            speech += '\n Here is some information about it : ' + JSON.stringify(platforms[requestBody.result.parameters.Platform]);
                         }
                     }
                 }
